@@ -1,0 +1,40 @@
+name: Verify website
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Verify index.html
+        run: |
+          echo "Verificando index.html"
+          test -f index.html
+          echo "index.html encontrado"
+
+      - name: Verify style.css
+        run: |
+          echo "Verificando style.css"
+          test -f styles/styles.css
+          echo "style.css encontrado"
+
+      - name: Verify HTML structure
+        run: |
+          echo "Verificando estructura HTML..."
+          grep -qi "<html" index.html
+          grep -qi "<head" index.html
+          grep -qi "<body" index.html
+          echo "Estructura HTML verificada"
+
+      - name: Verify CSS reference
+        run: |
+          echo "Verificando referencia CSS..."
+          grep -q 'styles/styles.css' index.html
+          echo "Referencia CSS verificada"
