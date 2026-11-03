@@ -1,0 +1,23 @@
+name: testPush
+ 
+on:
+    push:
+        branches: [prog2]
+
+jobs:
+    build:
+        runs-on: ubuntu-lastest
+        permissions:
+            contents: write
+
+        steps:
+          - name: Checkout repo
+            uses: actions/checkout@v7
+
+          - name: commit and push changes
+            uses: stefanzweifel/git-auto-commit-action@v7
+            with:
+                commit_message: archivos actulizados
+                commit_user_name: adrian
+                commit_user_email: l23070014@huetamo.tecnm.mx
+                commit_author: Adrian Hernandez
