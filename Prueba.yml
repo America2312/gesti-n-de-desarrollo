@@ -14,10 +14,10 @@ jobs:
           - name: Checkout repo
             uses: actions/checkout@v7
 
-          - name: commit and push changes
-            uses: stefanzweifel/git-auto-commit-action@v7
-            whit:
-                commit_message: archivos actulizados
-                commit_user_name: America
-                commit_user_email: l23070011@huetamo.tecnm.mx
-                commit_author: America Espinoza
+          # - name: commit and push changes
+          #   uses: stefanzweifel/git-auto-commit-action@v7
+          #   whit:
+          #       commit_message: archivos actulizados
+          #       commit_user_name: America
+          #       commit_user_email: l23070011@huetamo.tecnm.mx
+          #       commit_author: America Espinoza
