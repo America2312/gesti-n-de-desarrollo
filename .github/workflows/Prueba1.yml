@@ -1,0 +1,23 @@
+name: testPush
+
+on:
+  push:
+    branches: [Lizeth]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: archivos actualizados
+          commit_user_name: america
+          commit_user_email: l23070011@huetamo.tecnm.mx
+          commit_author: America Espinoza <l23070011@huetamo.tecnm.mx>
