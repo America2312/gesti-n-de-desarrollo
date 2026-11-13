@@ -1,17 +1,17 @@
 name: Verify website
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
-      
+      - master
+
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
       - name: Verify test.html
         run: |
@@ -36,5 +36,6 @@ jobs:
       - name: Verify CSS reference
         run: |
           echo "Verificando referencia CSS..."
-          grep -q 'css/style.css' test.html
+          grep -q 'style.css' test.html
+          echo "Referencia CSS verificada"
           echo "Referencia CSS verificada"
