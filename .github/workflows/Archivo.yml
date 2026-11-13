@@ -3,7 +3,7 @@ name: Verify website
 on:
   push:
     branches:
-      - master
+      - Lizeth
 
 jobs:
   test:
